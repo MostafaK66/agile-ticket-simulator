@@ -1,0 +1,50 @@
+[simulation]
+ticket_count = 1000
+seed = 123
+start_date = "2023-01-01"
+end_date = "2025-12-31"
+pi_length_days = 14
+feature_count = 50
+
+[forecast]
+enabled = true
+lags = 7
+validation_fraction = 0.2
+ridge_penalty = 1.0
+
+[output]
+directory = "outputs"
+events_file = "ticket_events.csv"
+increments_file = "program_increments.csv"
+daily_metrics_file = "daily_metrics.csv"
+forecasts_file = "forecasts.csv"
+manifest_file = "run.json"
+
+[projects.ADA_Project_1]
+progress_rate = 1.0
+capacity = 85
+teams = ["ADA_Team_1", "ADA_Team_2", "ADA_Team_3"]
+default_delays = [1, 2]
+review_delays = [1, 5, 10, 15]
+
+[projects.ADA_Project_2]
+progress_rate = 0.8
+capacity = 72
+teams = ["ADA_Team_1", "ADA_Team_4"]
+default_delays = [1, 5, 9, 13, 17]
+review_delays = [1, 4, 7]
+
+[projects.ADA_Project_3]
+progress_rate = 0.7
+capacity = 45
+teams = ["ADA_Team_5", "ADA_Team_6"]
+default_delays = [1, 8, 15, 22, 29]
+review_delays = [1, 11, 21, 31, 41, 51]
+
+[team_members]
+ADA_Team_1 = 5
+ADA_Team_2 = 9
+ADA_Team_3 = 6
+ADA_Team_4 = 10
+ADA_Team_5 = 4
+ADA_Team_6 = 11

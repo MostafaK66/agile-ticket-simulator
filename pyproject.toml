@@ -1,0 +1,59 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agile-ticket-simulator"
+version = "1.0.0"
+description = "Deterministic Agile ticket simulation and flow forecasting"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [{ name = "MostafaK66" }]
+dependencies = ["numpy>=1.26,<2.3", "pandas>=2.1,<4"]
+
+[project.optional-dependencies]
+dev = [
+  "hatchling>=1.27",
+  "mypy>=1.15",
+  "pandas-stubs>=2.1",
+  "pytest>=8.3",
+  "pytest-cov>=6",
+  "ruff>=0.11",
+]
+
+[project.scripts]
+agile-simulate = "agile_ticket_simulator.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agile_ticket_simulator"]
+
+[tool.ruff]
+line-length = 90
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "S"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["src"]
+show_error_codes = true
+warn_unreachable = true
+
+[tool.pytest.ini_options]
+addopts = "--strict-config --strict-markers --cov-branch --cov-fail-under=90"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+branch = true
+source = ["agile_ticket_simulator"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+exclude_also = ["if TYPE_CHECKING:"]
