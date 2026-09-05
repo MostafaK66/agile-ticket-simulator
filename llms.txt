@@ -1,0 +1,11 @@
+# Repository map
+
+- `src/agile_ticket_simulator/config.py`: immutable validated TOML configuration.
+- `src/agile_ticket_simulator/generator.py`: deterministic ticket-event simulation.
+- `src/agile_ticket_simulator/analytics.py`: complete daily project metrics.
+- `src/agile_ticket_simulator/forecasting.py`: leakage-safe rolling ridge forecasts.
+- `src/agile_ticket_simulator/artifacts.py`: CSV and JSON output boundary.
+- `src/agile_ticket_simulator/service.py`: application orchestration.
+- `src/agile_ticket_simulator/cli.py`: thin command-line entry point.
+- `config.example.toml`: documented runnable example.
+- `tests/`: deterministic offline unit tests.

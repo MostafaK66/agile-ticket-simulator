@@ -1,0 +1,10 @@
+Agile Ticket Simulator
+Copyright (c) 2026 MostafaK66
+
+This project is the maintained continuation of the original `generate_fake_data`
+repository by MostafaK66. It preserves the Agile ticket-event simulation and folds in
+the useful Done/Flow forecasting intent from the former `implement_predictor` branch.
+
+The original repository did not contain a license file. The owner has added the MIT
+License to this maintained version. Dependencies retain their respective licenses and
+are not bundled with this repository.
